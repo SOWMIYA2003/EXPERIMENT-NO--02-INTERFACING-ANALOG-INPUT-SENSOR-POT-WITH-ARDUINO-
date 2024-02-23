@@ -93,14 +93,14 @@ void loop()
   }
 }
 ```
-## Schematic  Diagram:
-![OP](./R3.png)
+
 ## Simulation output:
 ### OFF Condition : 
 ![OP](./r2.png)
 ### ON Condition : 
 ![OP](./r1.png)
-
+## Schematic  Diagram:
+![OP](./R3.png)
 ### Serial Monitor -  Values and Graph :
 ![op](./R4.png)
 
