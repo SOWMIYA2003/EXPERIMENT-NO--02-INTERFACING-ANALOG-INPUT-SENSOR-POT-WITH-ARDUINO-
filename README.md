@@ -1,24 +1,17 @@
- INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
-
-
-
-**AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
-
-
-**COMPONENTS REQUIRED:**
+ # INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
+## AIM : 
+ To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
+## COMPONENTS REQUIRED:
 1.	10 KΩPOT
 2.	1 KΩ resistor 
 3.	Arduino Uno 
 4.	USB Interfacing cable 
 5.	Connecting wires 
 6.	LED of choice 
-**
 
+## THEORY: 
 
-**THEORY**: 
-
-**Analog signals:**
+## Analog signals:
 
 Analog signals – directly measurable quantities in terms of some other quantity.
 Examples:
@@ -66,28 +59,50 @@ CIRCUIT DIAGRAM
 
 
 
-**PROGRAM** 
+## PROGRAM : 
+
+#### Developed By : Sowmiya N
+#### Register Number : 212221230106
  
+```
+int pot;
+int led = 7;
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600); // number of packets that you tarnsfer
+}
 
+void loop()
+{
+  pot = analogRead(A0);
+  //Serial.print("Value = ");
+  Serial.println(pot);
+  
+  if(pot>900)
+  {
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500); 
+  }
+  else
+  {
+  digitalWrite(led, LOW);
+  delay(500);
+  }
+}
+```
+## Schematic  Diagram:
+![OP](./R3.png)
+## Simulation output:
+### OFF Condition : 
+![OP](./r2.png)
+### ON Condition : 
+![OP](./r1.png)
 
+### Serial Monitor -  Values and Graph :
+![op](./R4.png)
 
-
-
-
-
-
-
-**
-**Simulation output:** 
-**
-
-
-[My image](username.github.com/repository/img/image.jpg)
-
-
-
-
-
-
-
-**RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
+## RESULT:
+Arduino uno analog input functioning is learned and interfaced with digital input switch .
